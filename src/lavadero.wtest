@@ -18,4 +18,14 @@ describe "Tests de Lavadero" {
 		assert.equals(10, lavaderoAutomatico.tiempoLavado(unAuto))
 		assert.equals(150, lavaderoAutomatico.precioLavado(unAuto))
 	}
+	
+	test "Una paloma malvada ensucia un auto" {
+		var palomaMalvada = new Paloma(100)
+		assert.equals(0, unAuto.nivelDeSuciedad())
+		
+		palomaMalvada.ensuciar(unAuto)
+		assert.equals(30, unAuto.nivelDeSuciedad())
+		
+		assert.equals(70, palomaMalvada.peso())
+	}
 }

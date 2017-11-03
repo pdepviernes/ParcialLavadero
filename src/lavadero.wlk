@@ -11,6 +11,10 @@ class Paloma {
 		unVehiculo.ensuciarse(suciedad)
 		peso -= suciedad
 	}
+	
+	method peso(){
+		return peso
+	}
 } 
 
 class Auto {
