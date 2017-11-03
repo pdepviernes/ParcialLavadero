@@ -1,0 +1,21 @@
+import lavadero.*
+
+describe "Tests de Lavadero" {
+	
+	var lavaderoAutomatico = new LavaderoAutomatico(10, 150)
+	var unAuto = new Auto()
+
+	test "Auto se ensucia y se lava" {
+		assert.equals(0, unAuto.nivelDeSuciedad())
+		unAuto.ensuciarse(20)
+		assert.equals(20, unAuto.nivelDeSuciedad())
+		
+		lavaderoAutomatico.lavar(unAuto)
+		assert.equals(0, unAuto.nivelDeSuciedad())
+	}
+
+	test "Lavadero hace presupuesto" {
+		assert.equals(10, lavaderoAutomatico.tiempoLavado(unAuto))
+		assert.equals(150, lavaderoAutomatico.precioLavado(unAuto))
+	}
+}
